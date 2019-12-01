@@ -104,8 +104,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="" href="#">
-            <img bind-src ='img_url' alt="" height = "60" weight="200">
+      <a class="navbar-brand" href="#">
+            MALUM ITINERA
           </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -119,6 +119,8 @@
           <label class="btn-danger" ngbButtonLabel>
             <input type="checkbox" ngbButton [(ngModel)]="model.r" [routerLink]="'/report'"> {{flag? 'Report' : 'See Report'}}
           </label>
+        </div>
+        <div class=" btn-group btn-group-toggle ml-auto ">
           <label class="btn-danger" ngbButtonLabel>
             <input type="checkbox" ngbButton [(ngModel)]="model.r" [routerLink]="'/seereport'"> See Report
           </label>
