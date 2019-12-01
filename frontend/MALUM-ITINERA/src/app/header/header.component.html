@@ -1,0 +1,150 @@
+<ng-template #content1 let-modal>
+    <div class="modal-header">
+    
+        &nbsp;
+        <ngb-tabset>
+            <ngb-tab title="LOGIN(For officials)">
+              <ng-template  ngbTabContent>
+                <div class="form-group">
+                  <label>Enter username or E-mail</label>
+                  <input type="text" placeholder="" class="form-control" [(ngModel)]="usernameEntered" >
+                </div>
+                
+                <div class="form-group">
+                  <label>Enter  Password</label>
+                  <input type="password" placeholder="" class="form-control" [(ngModel)]="passwordEntered">
+                </div>
+                
+                <div class="text-center">
+                  <button class="btn btn-primary btn-block" type ="submit" (click) = "authenticateTemp(username,password)" >Submit</button>
+                </div>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="LOGIN(For Users)">
+              <ng-template ngbTabContent>
+                <div class="form-group">
+                  <label>Enter username or E-mail</label>
+                  <input type="text" placeholder="" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                  <label>Enter  Password</label>
+                  <input type="text" placeholder="hgfeksjad@gmail.com" class="form-control">
+                </div>
+                
+                <div class="text-center">
+                  <button class="btn btn-primary btn-block" type ="submit" >Submit</button>
+                </div>
+              </ng-template>
+            </ngb-tab>
+            
+
+        </ngb-tabset>
+        
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<ng-template #content2 let-modal>
+    <div class="modal-header">
+        <ngb-tabset>
+            <ngb-tab title="Sign-Up(For officials)">
+              <ng-template ngbTabContent>
+                <div class="form-group">
+                  <label>Enter username or E-mail</label>
+                  <input type="text" placeholder="" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                  <label>Enter  Password</label>
+                  <input type="text" placeholder="hgfeksjad@gmail.com" class="form-control">
+                </div>
+                
+                <div class="text-center">
+                  <button class="btn btn-primary btn-block" type ="submit" >Submit</button>
+                </div>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Sign-Up(For Users)">
+              <ng-template ngbTabContent>
+                <div class="form-group">
+                  <label>Enter username or E-mail</label>
+                  <input type="text" placeholder="" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                  <label>Enter  Password</label>
+                  <input type="text" placeholder="" class="form-control">
+                </div>
+                
+                <div class="text-center">
+                  <button class="btn btn-primary btn-block" type ="submit" >Submit</button>
+                </div>
+              </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+    </div>
+    
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="" href="#">
+            <img bind-src ='img_url' alt="" height = "60" weight="200">
+          </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          
+          <hr>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="btn-group btn-group-toggle ml-auto">
+          <label class="btn-danger" ngbButtonLabel>
+            <input type="checkbox" ngbButton [(ngModel)]="model.r" [routerLink]="'/report'"> {{flag? 'Report' : 'See Report'}}
+          </label>
+          <label class="btn-danger" ngbButtonLabel>
+            <input type="checkbox" ngbButton [(ngModel)]="model.r" [routerLink]="'/seereport'"> See Report
+          </label>
+        </div>
+      </div>
+          
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="btn-group btn-group-toggle ml-auto">
+          <label class="btn-primary" ngbButtonLabel>
+            <input type="checkbox" ngbButton [(ngModel)]="model.a" [routerLink]="'/home'" >HOME
+          </label>
+          <label class="btn-success" ngbButtonLabel>
+            <input type="checkbox" ngbButton [(ngModel)]="model.b" [routerLink]="'/maps'" >GO TO MAPS 
+          </label>
+          <label class="btn-primary" ngbButtonLabel>
+            <input type="checkbox" ngbButton [(ngModel)]="model.c" (click)="openBackDropCustomClass(content1)"> LOGIN
+          </label>
+          <label class="btn-primary" ngbButtonLabel>
+            <input type="checkbox" ngbButton [(ngModel)]="model.d" (click)="openBackDropCustomClass(content2)"> SIGN UP
+          </label>
+        </div>
+        
+      </div>
+    </div>
+  </nav>
+  
+  
+  
+  
