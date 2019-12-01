@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.carousel-item {
+    /* Force to always be block */
+    display: block !important;
+    z-index: 1;
+    position: absolute;
+    transform: translateX(100%);
+    opacity: 0;
+    transition:all  0.5s;
+    visibility: hidden;
+  }
+  
+  .carousel-item.active {
+    position: relative;
+    transform: translateX(0);
+    visibility: visible ;
+    opacity: 1;
+  }
+  p{
+    padding-top:100px;
+  }
+  .light-blue-backdrop {
+    background-color: #5cb3fd;
+  }
+
+  
